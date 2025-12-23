@@ -18,27 +18,25 @@ while True:
 
         # 1. Qapaq yoxlaması
         if label_orig == "cap":
-            if conf < 0.50: continue # Qapaqdan 50% əmin deyilsə göstərmə
+            if conf < 0.50: continue 
             label = f"Qapaq hissesi {conf:.2f}"
-            color = (255, 0, 0) # Yaşıl
+            color = (255, 0, 0) 
             thickness = 2
 
         # 2. Qapaqsızlıq yoxlaması
         elif label_orig == "no-cap":
             label = "Qapaqsiz!"
-            color = (0, 0, 255) # Qırmızı
+            color = (0, 0, 255) 
             thickness = 3
 
-        # 3. Defekt (Əzik) yoxlaması - ƏN HƏSSAS HİSSƏ
+        # 3. Defekt (Əzik) yoxlaması 
         elif label_orig == "crumbled":
-            # Hətta 10% (0.10) ehtimal olsa belə defektli de
             label = f"DEFEKTLI {conf:.2f}"
-            color = (0, 0, 255) # Qırmızı
+            color = (0, 0, 255) 
             thickness = 3
 
         # 4. Normal şüşə yoxlaması
         elif label_orig == "not-crumbled":
-            # Əgər model 85% əmin deyilsə, "normaldır" deməsin (defekti qaçırmasın)
             if conf < 0.95: continue 
             label = f"Normal {conf:.2f}"
             color = (0, 255, 0) # Yaşıl
