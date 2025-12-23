@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 5
+names: ['cap', 'crumbled', 'label', 'no-cap', 'not-crumbled']
+
+roboflow:
+  workspace: spark-intelligence-scqhh
+  project: bottle-defect-detection
+  version: 1
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/spark-intelligence-scqhh/bottle-defect-detection/dataset/1
